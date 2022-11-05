@@ -1,6 +1,8 @@
-package factory;
+package factory.store;
 
-public class PizzaStore {
+import factory.pizza.Pizza;
+
+public abstract class PizzaStore {
 
   /**
    * 피자를 주문하는 메소드
@@ -9,11 +11,13 @@ public class PizzaStore {
    * @return pizza object
    */
   public Pizza orderPizza(String type) {
-    Pizza pizza = PizzaFactory.createPizza(type);
+    Pizza pizza = createPizza(type);
     pizza.prepare();
     pizza.bake();
     pizza.cut();
     pizza.box();
     return pizza;
   }
+
+  abstract Pizza createPizza(String type);
 }

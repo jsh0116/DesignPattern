@@ -1,4 +1,4 @@
-package factory;
+package factory.pizza;
 
 public abstract class PizzaFactory {
   public static Pizza createPizza(String type) {
